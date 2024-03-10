@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CalculateQuoteRequest;
+use App\Http\Resources\CurrencyResource;
 use App\Models\Currency;
 use App\Services\Contracts\QuoteInterface;
 use App\Services\QuoteService;
@@ -28,6 +29,7 @@ class CurrencyController extends Controller
     {
         $currencies = Currency::all();
 
+        CurrencyResource::collection($currencies);
         return response()->json($currencies);
     }
 

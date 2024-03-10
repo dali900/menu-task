@@ -21,7 +21,6 @@ return new class extends Migration
             $table->decimal('amount_paid_usd', 12, 6);
             $table->decimal('discount_percentage', 5, 2)->nullable();
             $table->decimal('discount_amount', 12, 6)->nullable();
-            $table->dateTime('created_at')->nullable();
             $table->timestamps();
         });
     }
